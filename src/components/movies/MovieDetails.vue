@@ -11,7 +11,7 @@
           <b-col sm="4" class="font-weight-bolder">
             <b-card-img :src="movieDetails[0].Poster" alt="Image"></b-card-img>
           </b-col>
-          <b-col sm="8" class="position-relative vh-50">
+          <b-col sm="8" class="m-auto vh-50">
             <b-card-body :title="movieDetails[0].Title">
               <b-card-text>
                 <div>Released Year : {{ movieDetails[0].Year }}</div>
@@ -45,12 +45,5 @@ export default {
 <style scoped>
 .font-weight-bolder {
   text-align: left;
-}
-@media only screen and (min-width: 700px) {
-  .card-body {
-    position: relative;
-    top: 30%;
-    bottom: 5px;
-  }
 }
 </style>

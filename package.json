@@ -17,7 +17,7 @@
     "bootstrap": "^5.1.1",
     "bootstrap-vue": "^2.21.2",
     "debounce": "^1.2.1",
-    "firebase": "^9.0.2",
+    "firebase": "^9.1.0",
     "firebase-tools": "^9.18.0",
     "lodash": "^4.17.21",
     "vue": "^2.6.14",

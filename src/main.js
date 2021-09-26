@@ -10,7 +10,7 @@ import Toasted from 'vue-toasted';
 import store from './store'
 import fireBaseConfig from './FireBase'
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+
 
 
 
@@ -20,7 +20,7 @@ Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 Vue.use(Toasted)
 const firebaseApp = initializeApp(fireBaseConfig);
-const analytics = getAnalytics(firebaseApp);
+
 
 Vue.config.productionTip = false
 

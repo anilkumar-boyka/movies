@@ -18,7 +18,6 @@ export default {
     return {
       moviesData: [],
       movieName: "",
-      i: 0,
     };
   },
   watch: {

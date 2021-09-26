@@ -5,7 +5,7 @@
         class="movie-div mt-2 col-md-4"
         v-for="(movie, i) in moviesData"
         :key="i"
-        @click="movieDetails(movie.imdbID)"
+        @click="movieDetails(movie)"
         bg-variant="dark"
         text-variant="white"
         border-variant="white"
@@ -24,14 +24,29 @@
 </template>
 <script>
 import axios from "axios";
+import { getDatabase, ref, set, push } from "firebase/database";
+
 export default {
   props: ["moviesData"],
   data() {
     return { selectedMovies: this.moviesData };
   },
   methods: {
-    movieDetails: function (imdbId) {
-      this.$router.push({ name: "MovieDetails", params: { imdbId: imdbId } });
+    movieDetails: function (movie) {
+      this.writeUserData(movie);
+      this.$router.push({
+        name: "MovieDetails",
+        params: { imdbId: movie.imdbID },
+      });
+    },
+
+    writeUserData: function (movie) {
+      let email = this.$store.getters.getEmail;
+      email = email.substring(0, email.length - 4);
+      const db = getDatabase();
+      push(ref(db, `movies-41a20-default-rtdb/${email}`), {
+        movieName: movie.Title,
+      });
     },
   },
 };
@@ -39,9 +54,6 @@ export default {
 <style scoped>
 .movie-div {
   margin-left: 15px;
-  /*  position: relative; */
-  /*  top: 0; */
-  /*  transition: top ease 0.5s; */
 }
 .row {
   display: flex;

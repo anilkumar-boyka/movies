@@ -13,11 +13,8 @@ const firebaseConfig = {
     storageBucket: "movies-41a20.appspot.com",
     messagingSenderId: "693235337834",
     appId: "1:693235337834:web:c1cde3923e44848d04d813",
-    measurementId: "G-CR0W8ERV30"
+    measurementId: "G-CR0W8ERV30",
+    databaseURL: "https://movies-41a20-default-rtdb.asia-southeast1.firebasedatabase.app",
+    storageBucket: "movies-41a20.appspot.com",
 };
-
-// Initialize Firebase
-/* const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app); */
-
 export default firebaseConfig;

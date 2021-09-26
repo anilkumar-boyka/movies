@@ -3,19 +3,16 @@ import { mount } from '@vue/test-utils'
 import Login from '@/components/movies/Login'
 import BootstrapVue from 'bootstrap-vue'
 Vue.use(BootstrapVue)
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
-jest.mock("firebase/auth", () => {
-  return {
-    //getAuth: jest.fn(),
-    signInWithEmailAndPassword: jest.fn
+/* jest.mock("firebase/auth", () => {
 
-  }
-  /* const getAuth = jest.fn(), */
-  /*  auth = getAuth(),
-   signInWithEmailAndPassword = jest.fn((auth, 'anil@gmail.com', '12345')) */
+  jest.mock('getAuth')
+  const auth = jest.fn;
+  const signInWithEmailAndPassword = jest.fn((auth, 'anil@gmail.com', '12345'))
 
 });
-
+ */
 describe('Login.vue', () => {
   const div = document.createElement('div')
   div.id = 'root'
@@ -24,7 +21,6 @@ describe('Login.vue', () => {
     attachTo: '#root'
   })
   beforeEach(() => {
-
     login: jest.fn()
   })
   it('Contents rendering corectly', () => {
